@@ -1,0 +1,14 @@
+# Use the official Node.js image as a parent image
+FROM node:latest
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the rest of the application
+COPY build ./build
+
+# Install serve to run the build files
+RUN npm install -g serve
+
+# Set the command to run the application
+CMD ["serve","-l","5000","-s", "build"]
