@@ -1,0 +1,17 @@
+# Use the official Node.js 14 image as the base image
+FROM node:latest
+
+# Set the working directory in the container
+WORKDIR /usr/src/app
+
+# Copy the package.json and package-lock.json files
+COPY package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Set environment variables
+ENV REACT_APP_API_URL=http://localhost:9000
+
+# Build the application
+CMD ["npm","run","build"]
