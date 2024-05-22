@@ -14,10 +14,6 @@ RUN npm install
 COPY . .
 
 # Run the tests
-RUN npm test
+CMD ["npm","test"]
 
-# Set environment variables
-ENV REACT_APP_API_URL=http://localhost:9000
 
-# Build the application
-RUN npm run build
