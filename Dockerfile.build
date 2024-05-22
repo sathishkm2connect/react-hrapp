@@ -14,4 +14,4 @@ RUN npm install
 ENV REACT_APP_API_URL=http://localhost:9000
 
 # Build the application
-CMD ["npm","run","build"]
+CMD ["npm","build"]
